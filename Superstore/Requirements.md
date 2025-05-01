@@ -1,0 +1,23 @@
+## 🎓 Project Context: TripleTen Saving Superstore (Data Visualization)
+
+- 🏫 **Student Role**: Junior Business Intelligence Analyst at TripleTen
+- 📁 **Dataset Provided**: `Superstore.xls` (Orders and Returns tables)
+- 🧰 **Tool Used**: Tableau (with calculated fields, dashboards, and story points)
+- 📊 **Objectives**:
+  - Identify key profit/loss centers
+  - Recommend products/subcategories to focus on or remove
+  - Evaluate advertising opportunities by state and month
+  - Analyze product and customer return behavior
+- 🧮 **Required Calculations**:
+  - `Returned` field: converted to binary (Yes = 1, Null = 0)
+  - Return rate, average profit, ad spend recommendations (based on 1/5 of profit)
+- 📈 **Visualizations Required**:
+  - Profit/loss by dimension (subcategory, product, region)
+  - Monthly profit trends by state for ad strategy
+  - Return rates by product, customer, and geography
+  - Combined profit vs. return rate plots
+- 🖥️ **Deliverables**:
+  - Multiple Tableau worksheets and dashboards
+  - Dashboard mockups and final interactive dashboard
+  - Tableau Public link
+  - README file summarizing findings and linking to the dashboard
