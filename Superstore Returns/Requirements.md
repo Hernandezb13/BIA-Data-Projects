@@ -1,0 +1,23 @@
+## 🎓 Project Context: TripleTen Monitoring Returns (Storytelling with Data)
+
+- 🏫 **Student Role**: Junior Business Intelligence Analyst at TripleTen
+- 📁 **Dataset**: `Superstore.xls` containing order and return data
+- 🎯 **Objective**: Identify causes of high return rates and create a visual narrative for the CEO
+- 🧰 **Tool Used**: Tableau (including dashboards, story points, and calculated fields)
+- 📊 **Required Visuals**:
+  - Scatterplot: Sales vs. Returns by product sub-category
+  - Bar charts: Return rate by category, time, and geography
+  - Map: Geographic return trends (e.g., by state)
+  - Composite charts with multi-factor analysis (e.g., region + sub-category)
+- 🧮 **Calculated Fields**:
+  - `Returns_Calculated`: 1 for “Yes”, 0 for null (used to compute return rate)
+  - `Order_Count`: Count of orders per customer
+- 🖊️ **Mockups**:
+  - Create and submit 3+ dashboard sketch variations
+  - Build a low-fidelity Tableau template based on selected sketch
+- 📄 **Dashboard Requirements**:
+  - Interactive filters (e.g., category, region, time)
+  - Clear labels, titles, and explanatory text
+- 🎥 **Presentation Requirements**:
+  - 3–5 minute recorded walkthrough or export as PDF
+  - Story Points must include summary, dashboard interpretation, root cause findings, and next steps
