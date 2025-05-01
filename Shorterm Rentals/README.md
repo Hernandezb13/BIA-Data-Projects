@@ -1,57 +1,96 @@
 # 🏙️ NYC Airbnb Market Analysis — Spreadsheet Data Project
 
-## 🚀 Project Overview
+## 📌 Project Overview
 
-This project was completed as part of the **TripleTen Business Intelligence program**. As a Junior BI Analyst, I was hired to help a client explore Airbnb market trends in Manhattan and guide investment decisions. The goal was to identify which neighborhoods and property types generate the most rental activity and revenue.
+This project was completed as part of the **TripleTen Business Intelligence program**. As a Junior BI Analyst, I was hired to help a client analyze Manhattan Airbnb data to identify profitable investment opportunities. Using spreadsheet tools, I determined which neighborhoods and property types generate the most rental activity and revenue.
 
-📄 [View Final Report (PDF)](./NYC%20AirBNB%20.pdf)
-
----
-
-## 🧾 Dataset Overview
-
-Two primary datasets were provided in spreadsheet format:
-
-- **`listings`**: Contains property-level data, such as neighborhood, number of bedrooms, and `number_of_reviews_ltm` (used as a proxy for bookings).
-- **`calendar`**: Contains 30 days of nightly availability and `adjusted_price` data for each listing.
+📄 [Final Report (PDF)](./NYC%20AirBNB%20.pdf)
 
 ---
 
-## 📝 Project Context (TripleTen Requirements)
+## 🧾 Dataset Summary
 
-- 🏫 **Student Role**: Junior BI Analyst
-- 📊 **Objective**: Analyze Airbnb data to identify high-performing listings and investment opportunities
-- 📁 **Provided Data**: `listings` and `calendar` sheets
-- 🧰 **Tools Used**: Excel / Google Sheets
-- 🧪 **Key Tasks**:
-  - Create and document data cleaning steps
-  - Use pivot tables and formulas to analyze listing activity and revenue
-  - Identify the top 10 neighborhoods by rental activity
-  - Estimate revenue of top listings based on availability and price
+The analysis used two key data tables:
+
+- **`listings`** – Includes property details like price, bedroom count, neighborhood, and `number_of_reviews_ltm` (used as a proxy for rental frequency)
+- **`calendar`** – Daily availability and adjusted price data for each listing over a 30-day period
 
 ---
 
-## 📈 Analysis Summary
+## 🎓 Project Context: TripleTen Requirements
 
-### 🔍 1. Most Attractive Neighborhoods and Property Sizes
-
-**Key Insights:**
-- Neighborhoods like **Harlem**, **Lower East Side**, and **East Village** had the highest number of reviews.
-- **1-bedroom properties** were the most popular across top neighborhoods.
-- **Studio apartments** were notably more popular in **Midtown**.
-
-**Approach:**
-- Used pivot tables to count reviews in the `number_of_reviews_ltm` column.
-- Analyzed preferences by neighborhood and room type to detect trends.
-- Created filters and segmented data to explore localized preferences.
+- **Role**: Junior BI Analyst (student)
+- **Objective**: Help a client identify top-performing vacation rentals in Manhattan
+- **Data Cleaning**:
+  - Maintained a raw copy of the dataset
+  - Documented all cleaning steps in a separate worksheet
+- **Tools**: Google Sheets / Excel
+- **Key Deliverables**:
+  - Pivot tables identifying attractive neighborhoods and room types
+  - Revenue estimates for top listings
+  - A stakeholder-facing final report with data-driven recommendations
 
 ---
 
-### 💰 2. Revenue Estimation for Top Listings
+## 📊 Analysis Breakdown
 
-**Data Preparation:**
-- Labeled top listings using a `top_listing` column (1 if listing matched top neighborhood and top room type).
-- In the `calendar` sheet, added a `revenue_earned` column:
-  ```excel
-  =IF([available] = "f", [adjusted_price], 0)
+### 1️⃣ Most Attractive Neighborhoods & Property Sizes
+
+- Used `number_of_reviews_ltm` as an estimate of rental frequency
+- Created pivot tables to analyze:
+  - Top neighborhoods by review count
+  - Most popular bedroom counts
+  - Differences in room-type preference across neighborhoods
+
+**Insight**: One-bedroom units were most attractive across neighborhoods, except for Midtown, which favored studios.
+
+---
+
+### 2️⃣ Revenue Estimates for Top Listings
+
+- Added `top_listing` column in `listings` to flag listings in top neighborhoods with the most popular room type
+- In the `calendar` table:
+  - Created a `revenue_earned` column:
+    ```excel
+    =IF([available] = "f", [adjusted_price], 0)
+    ```
+- In `listings`:
+  - Used `SUMIF()` to calculate total 30-day revenue from `calendar`
+  - Estimated annual revenue by multiplying by 12
+- Created a pivot table filtered by `top_listing = 1` to rank listings by estimated revenue
+
+---
+
+## 💡 Key Insights
+
+- **Harlem**, **Lower East Side**, and **East Village** had the highest review volumes
+- Midtown stood out for its popularity in **studio apartments**
+- Top listings in 1-bedroom and studio formats demonstrated strong revenue potential
+
+---
+
+## ✅ Recommendations
+
+- Focus investment on **1-bedroom listings** in high-review neighborhoods like **Harlem** and **East Village**
+- Treat **Midtown studios** as a unique, high-performing property type
+- Use **review count over the last 12 months** as a proxy for booking frequency
+- Prioritize properties with high pricing and frequent availability for higher revenue
+
+---
+
+## 🧰 Skills Demonstrated
+
+- Data cleaning and documentation
+- Pivot table analysis for segmentation and ranking
+- Spreadsheet functions: `IF()`, `SUMIF()`, conditional logic
+- Revenue modeling using adjusted nightly pricing
+- Stakeholder-focused reporting and insight delivery
+
+---
+
+## 📎 Files Included
+
+- `NYC AirBNB .pdf` – Final project report
+- `listings_cleaned.xlsx` – Listings data with new columns for filtering and revenue
+- `calendar_processed.xlsx` – Calendar data with nightly revenue calculations
 
